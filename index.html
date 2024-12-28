@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Advanced Weather Dashboard</h1>
+        <p>Your ultimate weather experience</p>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <section id="weather-display">
+            <h2>Current Weather</h2>
+            <div id="weather-data">Loading...</div>
+        </section>
+        <section id="forecast">
+            <h2>Weekly Forecast</h2>
+            <canvas id="forecast-chart"></canvas>
+        </section>
+        <section id="extras">
+            <h2>Extras</h2>
+            <div id="gif-container"></div>
+            <audio id="weather-sound" controls>
+                <source src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+    </main>
+    <footer>
+        <p>Made with ❤️ and advanced technology</p>
+    </footer>
+</body>
+</html>
