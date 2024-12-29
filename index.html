@@ -6,6 +6,11 @@
     <title>Extreme Weather Dashboard</title> 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
+    <link rel="manifest" href="/manifest.webmanifest"> 
+    <meta name="theme-color" content="#ffffff"> 
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> 
 </head>
 <body>
     <div class="container">
@@ -24,6 +29,8 @@
                     <span id="temperature-unit">°C</span>
                 </div>
                 <p id="weather-description"></p>
+                <p id="wind-speed"></p>
+                <p id="humidity"></p>
             </div>
         </section>
         <section id="weekly-forecast" data-aos="fade-up" data-aos-delay="200"> 
@@ -33,7 +40,7 @@
         <div id="extras" data-aos="fade-up" data-aos-delay="400">
             <p>Made with ❤️ and advanced technology.</p>
             <audio controls>
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"> 
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -44,5 +51,20 @@
         AOS.init();
     </script> 
     <script src="script.js"></script>
+
+    <script>
+        // Service Worker registration for offline functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function(registration) {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(function(error) {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
