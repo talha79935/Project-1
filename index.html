@@ -1,25 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Weather Dashboard</title>
+    <title>Extreme Weather Dashboard</title> 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
 </head>
 <body>
-    <h1>Advanced Weather Dashboard</h1>
-    <p>Your ultimate weather experience.</p>
-    <button onclick="toggleTheme()">Toggle Theme</button>
-    <section id="current-weather">Loading...</section>
-    <section id="weekly-forecast">Weekly Forecast</section>
-    <div id="extras">
-        <p>Made with ❤️ and advanced technology.</p>
-        <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <div class="container">
+        <h1>Extreme Weather Dashboard</h1>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+        <div id="location-search">
+            <input type="text" id="location-input" placeholder="Search for a location">
+            <button onclick="searchLocation()">Search</button>
+        </div>
+        <section id="current-weather" data-aos="fade-up">
+            <div class="weather-card">
+                <h2 id="location-name">Loading...</h2>
+                <div id="weather-icon"></div>
+                <div class="temperature">
+                    <span id="temperature-value"></span>
+                    <span id="temperature-unit">°C</span>
+                </div>
+                <p id="weather-description"></p>
+            </div>
+        </section>
+        <section id="weekly-forecast" data-aos="fade-up" data-aos-delay="200"> 
+            <h2>Weekly Forecast</h2>
+            <div id="forecast-container"></div>
+        </section>
+        <div id="extras" data-aos="fade-up" data-aos-delay="400">
+            <p>Made with ❤️ and advanced technology.</p>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script> 
+    <script>
+        AOS.init();
+    </script> 
     <script src="script.js"></script>
 </body>
 </html>
