@@ -1,28 +1,104 @@
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif; 
     background-color: #f4f4f9;
     color: #333;
     text-align: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
     transition: background-color 0.3s, color 0.3s;
+    overflow: hidden;
+    background-image: url('https://source.unsplash.com/1600x900/?clouds'); /* Add a subtle background image */
+    background-size: cover; 
+    background-attachment: fixed; 
 }
+
+.container {
+    max-width: 800px; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    position: relative; 
+}
+
 h1 {
     color: #007BFF;
+    margin-bottom: 20px;
+    font-size: 2.5rem; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
 }
+
 button {
-    padding: 10px 20px;
-    margin: 20px;
+    padding: 12px 25px;
+    margin: 10px;
     background-color: #007BFF;
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
+
 button:hover {
     background-color: #0056b3;
 }
+
+#location-search {
+    margin-bottom: 30px;
+}
+
+#location-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 250px; 
+}
+
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px); 
+}
+
+#weather-icon {
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF; 
+    animation: icon-spin 2s infinite linear; 
+}
+
+@keyframes icon-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.temperature {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
 .dark-theme {
-    background-color: #333;
+    background-color: #181818; 
     color: #f4f4f9;
+}
+
+/* Add a subtle gradient for a more visually appealing background */
+body.dark-theme {
+    background: linear-gradient(to bottom right, #181818, #282828); 
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
 }
